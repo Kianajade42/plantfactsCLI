@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require "../plantfacts/lib/plantfacts"
+
+Plantfacts::CLI.new.start
