@@ -1,4 +1,5 @@
-
+require 'nokogiri'
+require 'open-uri'
 def facts
  array=[]
 
@@ -8,4 +9,3 @@ array.push(list.text)
  end
  return array
 end
-

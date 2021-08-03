@@ -1,3 +1,5 @@
+require_relative '../plantfacts'
+require_relative 'scraper'
 class Plantfacts::CLI
 
 def start
@@ -23,19 +25,19 @@ end
 end
 
 def more
-    input_prompt = "Enter a number between 1-42 for a random plant fact, or type 'leave' to exit:"
-    puts input_prompt
+    input_prompt = "\n\n Enter a number between 1-42 for a random plant fact, or type 'leave' to exit: \n\n"
 input = nil
-    while input != "leave"
+    while true
+      puts input_prompt
       input = gets.strip
       if input.to_i > 0 && input.to_i < facts.length + 1
-        return facts[input.to_i - 1]
+       puts facts[input.to_i - 1]
       elsif input == "leave"
         puts goodbye
+        return
       else
-        puts "Sorry, I didn't understand that.  #{input_prompt}" 
-
-    #"Enter a number for another fact or type 'exit' to leave." 
+        puts "Sorry, I didn't understand that." 
+   
 
      end
    end

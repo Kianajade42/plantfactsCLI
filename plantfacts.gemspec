@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require "lib/plantfacts/version"
-
+require 'uri'
 Gem::Specification.new do |spec|
   spec.name          = "plantfacts"
   spec.version       = Plantfacts::VERSION
