@@ -1,5 +1,5 @@
-require_relative '../plantfacts'
-require_relative 'scraper'
+# require_relative '../plantfacts'
+# require_relative 'scraper'
 class Plantfacts::CLI
 
 
