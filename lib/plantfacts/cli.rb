@@ -1,12 +1,18 @@
 # require_relative '../plantfacts'
-# require_relative 'scraper'
+require_relative 'scraper'
 class Plantfacts::CLI
+
+attr_accessor :name
+
+def user
+    @name = gets.chomp
+end
 
 
 def start
    puts "Welcome! What is your name?"
-   name = gets.chomp
-     puts "Hi #{name}!what do you want to learn about? 
+   puts user
+     puts "Hi! #{name} what do you want to learn about? 
    Plants,
    History,
    Life"

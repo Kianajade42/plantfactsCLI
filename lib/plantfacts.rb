@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 #require_relative '../plantfacts'
-require_relative "./plantfacts/scraper"
+require_relative "./plantfacts/list"
 require_relative "./plantfacts/version"
 require_relative "./plantfacts/cli"
 
