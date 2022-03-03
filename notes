@@ -1,0 +1,11 @@
+What I am looking for is that you have a Fact class.
+ For every fact that is scraped, there should be an instance 
+ of the fact class created that holds the information about the fact.
+  So I would expect that an instance of the plant class would have an 
+  attribute of content for example. The content attribute would hold 
+  the text of the fact. Then you would use those instances that were
+   created to display the facts to the user. I'm looking for the app to 
+   be object-oriented, meaning you are creating instances of a class and 
+   using those instances to store information and display them to the user.
+
+   

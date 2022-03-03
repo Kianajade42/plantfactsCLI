@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 #require_relative '../plantfacts'
-require_relative "./plantfacts/list"
-require_relative "./plantfacts/version"
-require_relative "./plantfacts/cli"
+require_relative "./plantfacts/list.rb"
+require_relative "./plantfacts/version.rb"
+require_relative "./plantfacts/cli.rb"
+require_relative "./plantfacts/scraper.rb"
 
 require 'pry'
 require 'nokogiri'

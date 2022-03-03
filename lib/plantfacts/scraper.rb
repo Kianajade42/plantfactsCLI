@@ -1,24 +1,31 @@
+class Scraper
 
-def facts
- #array=[]
+def self.facts
 doc = Nokogiri::HTML(URI.open("https://www.funfactsabout.net/plant-facts/"))
-doc.css("ul.facts-list li").each do |list|
-$listitem.push(list.text)
- end
- return $listitem
-end
-def historyfacts
-doc = Nokogiri::HTML(URI.open("https://www.funfactsabout.net/interesting-history-facts/"))
-doc.css("ul.facts-list li").each do |list|
-$listitem.push(list.text)
- end
- return $listitem
+info = doc.css("ul.facts-list li")
+info.each do |li|
+pf = List.new 
+pf.content = li.text
+    end
+  end
 
-end
-def lifefacts
+def self.historyfacts
+doc = Nokogiri::HTML(URI.open("https://www.funfactsabout.net/interesting-history-facts/"))
+info = doc.css("ul.facts-list li")
+info.each do |li|
+hf = List.new 
+hf.content = li.text
+    end
+  end
+
+def self.lifefacts
 doc = Nokogiri::HTML(URI.open("https://www.funfactsabout.net/random-life-facts-2/"))
-doc.css("ol.facts-list li").each do |list|
-$listitem.push(list.text)
- end
- return $listitem
+info = doc.css("ul.facts-list li")
+info.each do |li|
+lf = List.new 
+lf.content = li.text
+    end
+  end
+  
 end
+

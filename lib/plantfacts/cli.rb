@@ -1,21 +1,19 @@
-# require_relative '../plantfacts'
-require_relative 'scraper'
+
+# require_relative 'scraper'
+
 class Plantfacts::CLI
-
-attr_accessor :name
-
-def user
-    @name = gets.chomp
-end
 
 
 def start
+  Scraper.facts
    puts "Welcome! What is your name?"
-   puts user
-     puts "Hi! #{name} what do you want to learn about? 
-   Plants,
-   History,
-   Life"
+   name = gets.chomp
+     puts "Hi! #{name} what do you want to learn about?" 
+     puts menu
+end
+
+def menu
+  puts  "Plants, History, or Life"
      input=gets.strip 
    case input
      when "Plants"
@@ -70,51 +68,49 @@ input = nil
     while true
       puts input_prompt
       input = gets.strip
-      if input.to_i > 0 && input.to_i < facts.length + 1
-       puts facts[input.to_i - 1]
+      if input.to_i > 0 && input.to_i < List.all.length + 1
+      puts Scraper.facts[input.to_i - 1]
       elsif input == "leave"
         puts goodbye
         return
       else
-        puts "Sorry, I didn't understand that." 
-   
-
-     end
+       puts "Sorry, I didn't understand that." 
+        end
    end
 end
+
+
 def historymore
     input_prompt = "\n\n Enter a number between 1-52 for a random history fact, or type 'leave' to exit: \n\n"
 input = nil
     while true
       puts input_prompt
       input = gets.strip
-      if input.to_i > 0 && input.to_i < facts.length + 1
-       puts historyfacts[input.to_i - 1]
+      if input.to_i > 0 && input.to_i < List.all.length + 1
+       puts Scraper.historyfacts[input.to_i - 1]
       elsif input == "leave"
         puts goodbye
         return
       else
         puts "Sorry, I didn't understand that." 
    
-
      end
    end
 end
+
 def lifemore
     input_prompt = "\n\n Enter a number between 1-52 for a random life fact, or type 'leave' to exit: \n\n"
 input = nil
     while true
       puts input_prompt
       input = gets.strip
-      if input.to_i > 0 && input.to_i < facts.length + 1
-       puts lifefacts[input.to_i - 1]
+      if input.to_i > 0 && input.to_i < List.all.length + 1
+       puts Scraper.lifefacts[input.to_i - 1]
       elsif input == "leave"
         puts goodbye
         return
       else
         puts "Sorry, I didn't understand that." 
-   
-
      end
    end
 end
